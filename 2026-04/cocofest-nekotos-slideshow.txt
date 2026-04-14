@@ -1,0 +1,39 @@
+## NekotOS Slideshow
+
+For a 16K RAM coco2 and a Bonobo 2.4, no MPI.
+(* using coco2 "2C" and bonobo 33 or B33 *)
+
+
+----------------------------------------------------------------------
+
+In one window:
+
+cd ~/modoc/coco-shelf/build-frobio
+
+    ./lemma-waiter  -cards -lemmings_root pizga-base/Internal/LEMMINGS -lan=127.0.0.1 -config_by_dhcp=0 --nav_root pizga --web_static pizga-base/Internal/web-static/ -games_dir pizga-base/Internal/NEKOTOS/ 
+
+In another window:
+
+cd ~/modoc/coco-shelf/copico-bonobo/v2.4/tether
+
+    go run ./. -handle YAK -name strick9 -airport AGS
+
+Then "plug in" the USB cable to the bonobo
+
+Then turn on the coco2.
+
+    /R .Y1
+
+---------------------------------------
+
+cd ~/modoc/coco-shelf/nekotos/data/coco2
+
+Use `sh proc0.sh filenames...` to convert PNG to GNP and vice versa.
+
+Use `sh proc1.sh filenames...` to rename .png files to md5 names.
+
+Use `sh proc2.sh` to convert all *.png for Coco2 framebuffers.
+
+--------------------------------------
+
+
