@@ -1,10 +1,14 @@
-
+WORKING with Centipede 32D named "002" (four bodge wires)
 
 ~/modoc/coco-shelf/copico-bonobo/v3.1-centipede/centipede-watcher
 
-cp fuzix.dsk /tmp/
+go run ...../nekotos/tools/reverse/reverse.go   \
+   < ~/modoc/coco-shelf/ideas/2026-04/ericomont/erico-OPIL.2026-04-06.piz \
+   > /tmp/erico-OPIL.2026-04-06.zip
 
-[ we are not really running fuzix; I just found this decb-formatted disk image. ]
+   ( cd /tmp ; unzip erico-OPIL.2026-04-06.zip )
+
+   decb dir /tmp/erico-OPIL.2026-04-06.dsk
 
  ================================================================
 
@@ -18,12 +22,15 @@ cp fuzix.dsk /tmp/
 
 cp /home/strick/modoc/coco-shelf/copico-bonobo/v3.1-centipede/centipede-watcher/fuzix.dsk /tmp/
 
+============================================================
+
 ~/modoc/coco-shelf/tfr9/v3
 
 make all
 
-============================================================
+    -->  ./generated/tconsole.linux-amd64.exe
 
+=============================================================
 
 cat /home/strick/modoc/coco-shelf/toolshed/cocoroms/extbas11.rom ../../toolshed/cocoroms/bas13.rom > /tmp/coco2.0x8000.rom
 
@@ -31,4 +38,7 @@ cp  /home/strick/modoc/coco-shelf/toolshed/cocoroms/disk11.rom /tmp/disk11.0xC00
 cp  /home/strick/modoc/coco-shelf/toolshed/cocoroms/disk11.rom.list  /tmp/disk11.0xC000.rom.list
 
 
-./generated/tconsole.linux-amd64.exe  --disks=f0:/tmp/erico-OPIL.coco.dsk   -abslists ../../toolshed/cocoroms/bas13.rom.list,/home/strick/modoc/coco-shelf/toolshed/cocoroms/extbas11.rom.list,/tmp/disk11.0xC000.rom.list  -no_modules  2>_log    /tmp/coco2.0x8000.rom  /tmp/disk11.0xC000.rom   coco2-vectors-6309.0xfff0.rom | tee _tty
+./generated/tconsole.linux-amd64.exe  --disks=f0:/tmp/erico-OPIL.2026-04-06.dsk   -abslists ../../toolshed/cocoroms/bas13.rom.list,/home/strick/modoc/coco-shelf/toolshed/cocoroms/extbas11.rom.list,/tmp/disk11.0xC000.rom.list  -no_modules  2>_log    /tmp/coco2.0x8000.rom  /tmp/disk11.0xC000.rom   coco2-vectors-6309.0xfff0.rom | tee _tty
+
+xdg-open http://localhost:8080
+
